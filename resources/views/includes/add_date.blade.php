@@ -1,0 +1,49 @@
+<!-- Add -->
+<div class="modal fade" id="addnew">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title"><b>{{__('global.ndate')}}</b></h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span></button>
+              
+            </div>
+            <div class="modal-body text-left">
+                <form class="form-horizontal" method="POST" action="{{ route('date.store') }}">
+                    @csrf
+                    <div class="form-group">
+                        <label for="name"  class="col-sm-6 control-label">{{__('global.title')}}<i> { {{__('global.noSpace')}} }</i></label>
+
+                        
+                            <div class="bootstrap-timepicker">
+                                <input type="text" placeholder="Enter a date name [hypen accepted]" class="form-control timepicker" id="name" name="slug">
+                            </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="date"  class="col-sm-3 control-label">{{__('global.date')}}</label>
+
+                        
+                            <div class="bootstrap-timepicker">
+                                <input type="date" placeholder="dd-mm-yyyy" class="form-control timepicker" id="date" name="date" />
+                            </div>
+                            
+                        
+                    </div>
+                    {{-- <div class="form-group">
+                        <label for="time_out" class="col-sm-3 control-label">Time Out</label>
+
+                        
+                            <div class="bootstrap-timepicker">
+                                <input type="time" class="form-control timepicker" id="time_out" name="time_out" required>
+                            </div>
+                    </div> --}}
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger btn-flat pull-left" data-dismiss="modal"><i class="fa fa-close"></i>{{__('global.close')}}</button>
+                <button type="submit" class="btn btn-success btn-flat"><i class="fa fa-save"></i>{{__('global.save')}}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
